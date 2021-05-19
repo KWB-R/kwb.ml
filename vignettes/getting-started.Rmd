@@ -35,7 +35,7 @@ TU Dortmund. Should make it easy to develop different machine learning models.
 
 **Books** 
 
-* [Max Kuhn & Julia Silge (2021): Tidy Modeling with R]([https://www.tmwr.org/) (free HTML version)
+* [Max Kuhn & Julia Silge (2021): Tidy Modeling with R](https://www.tmwr.org/) (free HTML version)
 
 * [Chester Ismay & Albert Y. Kim (2021): Statistical Inference via Data Science - A ModernDive into R and the Tidyverse](https://moderndive.com/) (free HTML version)
 
