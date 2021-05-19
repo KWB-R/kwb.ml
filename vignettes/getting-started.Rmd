@@ -33,7 +33,23 @@ TU Dortmund. Should make it easy to develop different machine learning models.
 
 ## Resources
 
-**Book** (free HTML version): [Hefin Ioan Rhys (2020): Machine Learning with R, the tidyverse, and mlr](https://livebook.manning.com/book/machine-learning-for-mortals-mere-and-otherwise/chapter-1/v-4/)
+**Books** 
+
+* [Max Kuhn & Julia Silge (2021): Tidy Modeling with R]([https://www.tmwr.org/) (free HTML version)
+
+* [Chester Ismay & Albert Y. Kim (2021): Statistical Inference via Data Science - A ModernDive into R and the Tidyverse](https://moderndive.com/) (free HTML version)
+
+* [Bradley Boehmke & Brandon Greenwell (2020): Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/) (free HTML version)
+
+* [Hefin Ioan Rhys (2020): Machine Learning with R, the tidyverse, and mlr](https://livebook.manning.com/book/machine-learning-for-mortals-mere-and-otherwise/chapter-1/v-4/) (partly free HTML version)
+
+***General Book Recommendation for ...***
+
+> "... R users who want to improve their programming skills and understanding of 
+the language. It should also be useful for programmers coming to R from other 
+languages, "
+>
+> --- [Hadley Wickam (2021): Advanced R (2nd edition)](https://adv-r.hadley.nz/) (partly free HTML version)
 
 **E-Learning plattform Datacamp**: offers more than [37 Machine Learning courses in R](https://learn.datacamp.com/search?utf8=%E2%9C%93&q=machine+learning&tab=courses&facets%5Btechnology%5D%5B%5D=R). At KWB we have a premium company account. If you are 
 working for KWB and interested please follow the [Learning R on DataCamp](https://kwb-r.github.io/fakin.doc/faq.html#learning-r-on-datacamp) 
