@@ -14,6 +14,27 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(kwb.ml)
-```
+## Learning
+
+Overview of available machine learning frameworks in R, which are ordered from 
+**cutting-edge** to **outdated**:
+
+1. [tidymodels](https://tidymodels.org): collection of packages for modeling and
+machine learning using [tidyverse](https://tidyverse.org) principle covering the 
+whole workflow (data pre-processing to evaluating model performance). Should also 
+make it simple to switch to between different models. Recommended e-learning 
+course (~4h) is offered by DataCamp [Modeling with tidymodels in R](https://learn.datacamp.com/courses/modeling-with-tidymodels-in-r). 
+
+2. [mlr3](https://mlr3.mlr-org.com/): R package developed by statisticians at 
+TU Dortmund. Should make it easy to develop different machine learning models. 
+*Maybe an alternative to [tidymodels](https://tidymodels.org) approach?*
+
+3. [caret](https://topepo.github.io/caret/index.html): R package for machine learning. *Outdated, as main developer Max Kuhn now works for R Studio for improving the [tidymodels](https://tidymodels.org) framework mentioned above.*
+
+## Resources
+
+**Book** (free HTML version): [Hefin Ioan Rhys (2020): Machine Learning with R, the tidyverse, and mlr](https://livebook.manning.com/book/machine-learning-for-mortals-mere-and-otherwise/chapter-1/v-4/)
+
+**E-Learning plattform Datacamp**: offers more than [37 Machine Learning courses in R](https://learn.datacamp.com/search?utf8=%E2%9C%93&q=machine+learning&tab=courses&facets%5Btechnology%5D%5B%5D=R). At KWB we have a premium company account. If you are 
+working for KWB and interested please follow the [Learning R on DataCamp](https://kwb-r.github.io/fakin.doc/faq.html#learning-r-on-datacamp) 
+workflow.
