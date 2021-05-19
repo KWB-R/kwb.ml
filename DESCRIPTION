@@ -19,10 +19,17 @@ Description: R Package with Functions, Workflows and Tutorials
 License: MIT + file LICENSE
 URL: https://github.com/KWB-R/kwb.ml
 BugReports: https://github.com/KWB-R/kwb.ml/issues
+Imports: 
+    caret, 
+    doParallel, 
+    kwb.utils, 
+    raster
 Suggests: 
     covr,
     knitr,
     rmarkdown
+Remotes:
+    github::kwb-r/kwb.utils
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
