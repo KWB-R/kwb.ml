@@ -37,6 +37,8 @@ TU Dortmund. Should make it easy to develop different machine learning models.
 
 * [Max Kuhn & Julia Silge (2021): Tidy Modeling with R]([https://www.tmwr.org/) (free HTML version)
 
+* [Becker et al. 2021: mlr3 book](https://mlr3book.mlr-org.com/) (free HTML version)
+
 * [Chester Ismay & Albert Y. Kim (2021): Statistical Inference via Data Science - A ModernDive into R and the Tidyverse](https://moderndive.com/) (free HTML version)
 
 * [Bradley Boehmke & Brandon Greenwell (2020): Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/) (free HTML version)
