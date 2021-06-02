@@ -49,13 +49,13 @@ load an existing file.}
 \item{nCores}{no. of cores for running in parallel mode (uses library
 'doParallel'), (default: parallel::detectCores() - 1)}
 
-\item{mtryGrd}{Number of trees to grow. In the random forests literature, this
-is referred to as the ntree parameter. Larger number of trees produce more
-stable models and covariate importance estimates, but require more memory and
-a longer run time. For small datasets, 50 trees may be sufficient. For larger
-datasets, 500 or more may be required. Please consult the random forests
-literature for extensive discussion of this parameter (e.g. Cutler et al., 2007;
-Strobl et al., 2007; Strobl et al., 2008).}
+\item{mtryGrd}{Number of trees to grow. In the random forests literature,
+this is referred to as the ntree parameter. Larger number of trees produce
+more stable models and covariate importance estimates, but require more
+memory and a longer run time. For small datasets, 50 trees may be sufficient.
+For larger datasets, 500 or more may be required. Please consult the random
+forests literature for extensive discussion of this parameter (e.g. Cutler et
+al., 2007; Strobl et al., 2007; Strobl et al., 2008).}
 
 \item{ntreeGrd}{Number of variables available for splitting at each tree node.
 In the random forests literature, this is referred to as the mtry parameter.
@@ -75,8 +75,8 @@ that mtry had a strong influence on predictor variable importance estimates.}
 (default: 2)}
 }
 \value{
-Writes spectralSignatures (if overlayExists is FALSE) and fitted random
-forest model with name modelName.
+Writes spectralSignatures (if overlayExists is FALSE) and fitted
+random forest model with name modelName.
 }
 \description{
 Wrapper function for fitting a random forest using a multi-band
