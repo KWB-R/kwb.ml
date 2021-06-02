@@ -35,7 +35,7 @@ TU Dortmund. Should make it easy to develop different machine learning models.
 
 **Books** 
 
-* [Max Kuhn & Julia Silge (2021): Tidy Modeling with R]([https://www.tmwr.org/) (free HTML version)
+* [Max Kuhn & Julia Silge (2021): Tidy Modeling with R](https://www.tmwr.org/) (free HTML version)
 
 * [Becker et al. 2021: mlr3 book](https://mlr3book.mlr-org.com/) (free HTML version)
 
