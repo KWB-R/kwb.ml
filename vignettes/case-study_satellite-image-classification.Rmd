@@ -14,22 +14,140 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+is_ghactions <- identical(Sys.getenv("CI"), "true")
+all_nextcloud_envs_set <- all(nchar(Sys.getenv(sprintf("NEXTCLOUD_%s", 
+                                                   c("URL", "USER", "PW"))) > 0))
+eval_code <- is_ghactions && all_nextcloud_envs_set
 ```
 
 Image segmentation for urban surfaces with random forest based on spectral 
 signatures to build image classification model (random forest)
 
+## Define paths
 
-```{r setup, eval = FALSE}
+```{r define_paths}
+# Load the R package
+library(kwb.ml)
+
+### define paths
 
 path_list <- list(
-  root_path = "C:/kwb/projects/keys/Data-Work packages",
+  local_dir = getwd(),
+  cloud_dir = "projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis",
   site = "Jinxi",
   data = "WP2_SUW_pollution_<site>",
-  gis = "<root_path>/<data>/_DataAnalysis/gis",
+  gis = "<local_dir>/<data>/_DataAnalysis/gis",
+  pattern_image = 'input_image\\.img$',
+  pattern_groundtruth = 'input_groundtruth\\.*',
+  satellite_image = "<gis>/input_image.img",
+  groundtruth = "<gis>/input_groundtruth.shp"
 )
 
 paths <- kwb.utils::resolve(path_list)
+
+```
+
+## Image Files
+
+This tutorial needs a one satellite `input_image.img` file which directly downloaded from
+the KWB [Cloud](#cloud). 
+
+Currently seven input files are required:
+
+* `input_image`.`img` (input: name of satellite image file)
+
+* `<input_groundtruth>`.`shp|dbf|cpg|prj|qpj|shx` (input: groundtruth data)
+
+
+### Cloud 
+
+You can download the required files from the KWB cloud if you are a 
+registered user with access to the folder ``r paths$cloud_dir``
+
+For doing so follow the steps below: 
+
+1. Open `RStudio` and run `usethis::edit_r_environ()`
+
+2. In the opened window add the required environment variables
+
+```
+NEXTCLOUD_URL = "https://<replace-with-kwb-cloud-url>"
+NEXTCLOUD_USER = "<your-kwb-cloud-username>" # your username
+NEXTCLOUD_PASSWORD = "your-nextcloud-app-password" ### see details below
+```
+
+For creating `<your-nextcloud-app-password>`:
+
+* go to: https://replace-with-dwc-cloud-url/index.php/settings/user/security
+
+* scroll down to `create new app password`
+
+* select a name e.g. `r-script` and copy the token and replace `your-nextcloud-app-password`
+
+
+3. Finally you need to restart Rstudio and proceed with the code below:
+
+```{r nextcloud_download, eval = eval_code}
+
+required_files <- paste0(c(paths$pattern_image,
+                           paths$pattern_groundtruth),
+                         collapse = "|")
+
+
+# Download .cbc and .bhd and .dis files
+ml_files <- kwb.nextcloud::list_files(
+  paths$cloud_dir,
+  full_info = TRUE) %>%
+  dplyr::filter(stringr::str_detect(.data$file,
+                                    pattern = required_files))
+
+ml_files
+
+
+if(!dir.exists(paths$gis)) fs::dir_create(paths$gis, recurse = TRUE)
+
+kwb.nextcloud::download_files(href = ml_files$href,
+                              target_dir = paths$gis)
+
+```
+
+
+## Machine Learning
+
+
+### Input Data 
+
+```{r ml_input-data, eval = eval_code}
+## Plot 'satellite image'
+
+satellite_image <- raster::stack(paths$satellite_image)  
+raster::plotRGB(satellite_image)
+
+satellite_raster <- raster::raster(paths$satellite_image)
+
+### Training dataset
+groundtruth <- raster::shapefile(paths$groundtruth)
+
+### number of pre-classified polygons for each categorie
+table(groundtruth$cover)
+
+### plot of pre-classified surfaces (used for model ML-training)
+raster::plot(groundtruth, col = topo.colors(5))
+
+```
+
+### Setup Model 
+
+Build a `random forest` machine learning model for classification of the following
+five urban surfaces: 
+- `roofs`
+- `streets`
+- `perivous` areas
+- `shadow` (accounting for classification artifacts due to limited satellite image 
+resolution)
+- `water` areas 
+
+```{r setup, eval = eval_code}
 
 # build classification model
 kwb.ml::buildClassMod(

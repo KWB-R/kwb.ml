@@ -9,20 +9,17 @@ for Machine Learning at KWB.
 
 ## Installation
 
-For details on how to install KWB-R packages checkout our [installation tutorial](https://kwb-r.github.io/kwb.pkgbuild/articles/install.html).
+For installing the latest release of this R package run the following code below:
 
 ```r
-### Optionally: specify GitHub Personal Access Token (GITHUB_PAT)
-### See here why this might be important for you:
-### https://kwb-r.github.io/kwb.pkgbuild/articles/install.html#set-your-github_pat
+# Enable repository from kwb-r
+options(repos = c(
+  kwbr = 'https://kwb-r.r-universe.dev',
+  CRAN = 'https://cloud.r-project.org'))
+  
+# Download and install keys.lid in R
+install.packages('kwb.ml')
 
-# Sys.setenv(GITHUB_PAT = "mysecret_access_token")
-
-# Install package "remotes" from CRAN
-if (! require("remotes")) {
-  install.packages("remotes", repos = "https://cloud.r-project.org")
-}
-
-# Install KWB package 'kwb.ml' from GitHub
-remotes::install_github("KWB-R/kwb.ml")
+# Browse the kwb.ml manual pages
+help(package = 'kwb.ml')
 ```
