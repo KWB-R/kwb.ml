@@ -25,7 +25,7 @@ signatures to build image classification model (random forest)
 
 ## Define paths
 
-```{r define_paths}
+```{r define_paths, eval=TRUE}
 # Load the R package
 library(kwb.ml)
 
@@ -109,6 +109,8 @@ if(!dir.exists(paths$gis)) fs::dir_create(paths$gis, recurse = TRUE)
 kwb.nextcloud::download_files(href = ml_files$href,
                               target_dir = paths$gis)
 
+fs::dir_ls(paths$gis)
+
 ```
 
 
@@ -117,7 +119,7 @@ kwb.nextcloud::download_files(href = ml_files$href,
 
 ### Input Data 
 
-```{r ml_input-data, eval = eval_code}
+```{r ml_input-data, eval = FALSE}
 ## Plot 'satellite image'
 
 satellite_image <- raster::stack(paths$satellite_image)  
@@ -147,7 +149,7 @@ five urban surfaces:
 resolution)
 - `water` areas 
 
-```{r setup, eval = eval_code}
+```{r setup, eval = FALSE}
 
 # build classification model
 kwb.ml::buildClassMod(
