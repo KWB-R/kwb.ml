@@ -186,13 +186,13 @@
 <span class="co">#&gt; Splitting paths ... ok. (0.00s) </span>
 <span class="co">#&gt; Removing the first 10 path segments ... ok. (0.00s) </span>
 <span class="co">#&gt; Putting path segments together ... ok. (0.00s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.cpg ... ok. (0.44s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.dbf ... ok. (0.54s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.prj ... ok. (0.54s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.qpj ... ok. (0.49s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shp ... ok. (0.51s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shx ... ok. (0.49s) </span>
-<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_image.img ... ok. (29.14s)</span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.cpg ... ok. (0.53s) </span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.dbf ... ok. (0.51s) </span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.prj ... ok. (0.76s) </span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.qpj ... ok. (0.53s) </span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shp ... ok. (0.54s) </span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shx ... ok. (0.54s) </span>
+<span class="co">#&gt; Downloading /remote.php/dav/files/mrustl/projects/keys/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_image.img ... ok. (30.33s)</span>
 <span class="co">#&gt; [1] "/Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.cpg"</span>
 <span class="co">#&gt; [2] "/Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.dbf"</span>
 <span class="co">#&gt; [3] "/Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.prj"</span>
@@ -208,7 +208,12 @@
 <span class="co">#&gt; /Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.qpj</span>
 <span class="co">#&gt; /Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shp</span>
 <span class="co">#&gt; /Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shx</span>
-<span class="co">#&gt; /Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_image.img</span></code></pre></div>
+<span class="co">#&gt; /Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_image.img</span>
+
+<span class="va">paths</span><span class="op">$</span><span class="va">satellite_image</span>
+<span class="co">#&gt; [1] "/Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_image.img"</span>
+<span class="va">paths</span><span class="op">$</span><span class="va">groundtruth</span>
+<span class="co">#&gt; [1] "/Users/runner/work/kwb.ml/kwb.ml/vignettes/WP2_SUW_pollution_Jinxi/_DataAnalysis/gis/input_groundtruth.shp"</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -217,28 +222,62 @@
 <div class="section level3">
 <h3 id="input-data">Input Data<a class="anchor" aria-label="anchor" href="#input-data"></a>
 </h3>
+<div class="section level4">
+<h4 id="satellite-image">Satellite Image<a class="anchor" aria-label="anchor" href="#satellite-image"></a>
+</h4>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Plot 'satellite image'</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster" class="external-link">raster</a></span><span class="op">)</span>
+<span class="co">#&gt; Loading required package: sp</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://rgdal.r-forge.r-project.org" class="external-link">rgdal</a></span><span class="op">)</span>
+<span class="co">#&gt; Please note that rgdal will be retired by the end of 2023,</span>
+<span class="co">#&gt; plan transition to sf/stars/terra functions using GDAL and PROJ</span>
+<span class="co">#&gt; at your earliest convenience.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; rgdal: version: 1.5-32, (SVN revision 1176)</span>
+<span class="co">#&gt; Geospatial Data Abstraction Library extensions to R successfully loaded</span>
+<span class="co">#&gt; Loaded GDAL runtime: GDAL 3.5.0, released 2022/05/10</span>
+<span class="co">#&gt; Path to GDAL shared files: /usr/local/Cellar/gdal/3.5.0/share/gdal</span>
+<span class="co">#&gt;  GDAL does not use iconv for recoding strings.</span>
+<span class="co">#&gt; GDAL binary built with GEOS: TRUE </span>
+<span class="co">#&gt; Loaded PROJ runtime: Rel. 9.0.0, March 1st, 2022, [PJ_VERSION: 900]</span>
+<span class="co">#&gt; Path to PROJ shared files: /Users/runner/Library/Application Support/proj:/usr/local/opt/proj/share/proj:/usr/local/Cellar/proj/9.0.0_1/share/proj</span>
+<span class="co">#&gt; PROJ CDN enabled: FALSE</span>
+<span class="co">#&gt; Linking to sp version:1.4-7</span>
+<span class="co">#&gt; To mute warnings of possible GDAL/OSR exportToProj4() degradation,</span>
+<span class="co">#&gt; use options("rgdal_show_exportToProj4_warnings"="none") before loading sp or rgdal.</span>
+
+<span class="co">## Plot 'satellite image'</span>
 
 <span class="va">satellite_image</span> <span class="op">&lt;-</span> <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/stack.html" class="external-link">stack</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">satellite_image</span><span class="op">)</span>  
-<span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plotRGB.html" class="external-link">plotRGB</a></span><span class="op">(</span><span class="va">satellite_image</span><span class="op">)</span>
-
-<span class="va">satellite_raster</span> <span class="op">&lt;-</span> <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html" class="external-link">raster</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">satellite_image</span><span class="op">)</span>
-
-<span class="co">### Training dataset</span>
+<span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plotRGB.html" class="external-link">plotRGB</a></span><span class="op">(</span><span class="va">satellite_image</span><span class="op">)</span></code></pre></div>
+<p><img src="case-study_satellite-image-classification_files/figure-html/ml_inputdata_satellite-1.png" width="700"></p>
+</div>
+<div class="section level4">
+<h4 id="classification-dataset">Classification Dataset<a class="anchor" aria-label="anchor" href="#classification-dataset"></a>
+</h4>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">### Training dataset</span>
 <span class="va">groundtruth</span> <span class="op">&lt;-</span> <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/shapefile.html" class="external-link">shapefile</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">groundtruth</span><span class="op">)</span>
+<span class="co">#&gt; Warning in OGRSpatialRef(dsn, layer, morphFromESRI = morphFromESRI, dumpSRS =</span>
+<span class="co">#&gt; dumpSRS, : Discarded datum China_2000 in Proj4 definition: +proj=tmerc +lat_0=0</span>
+<span class="co">#&gt; +lon_0=117 +k=1 +x_0=39500000 +y_0=0 +ellps=GRS80 +units=m +no_defs</span>
 
 <span class="co">### number of pre-classified polygons for each categorie</span>
 <span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">groundtruth</span><span class="op">$</span><span class="va">cover</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; pervious     roof   shadow   street    water </span>
+<span class="co">#&gt;       10       45        3        9        3</span>
 
 <span class="co">### plot of pre-classified surfaces (used for model ML-training)</span>
 <span class="fu">raster</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">groundtruth</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">topo.colors</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p><img src="case-study_satellite-image-classification_files/figure-html/ml_inputdata_classification-1.png" width="700"></p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="setup-model">Setup Model<a class="anchor" aria-label="anchor" href="#setup-model"></a>
 </h3>
 <p>Build a <code>random forest</code> machine learning model for classification of the following five urban surfaces: - <code>roofs</code> - <code>streets</code> - <code>perivous</code> areas - <code>shadow</code> (accounting for classification artifacts due to limited satellite image resolution) - <code>water</code> areas</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
 <span class="co"># build classification model</span>
 <span class="fu">kwb.ml</span><span class="fu">::</span><span class="fu"><a href="../reference/buildClassMod.html">buildClassMod</a></span><span class="op">(</span>
@@ -259,18 +298,79 @@
   nfolds <span class="op">=</span> <span class="fl">3</span>, 
   nodesize <span class="op">=</span> <span class="fl">3</span>, 
   cvrepeats <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loading spatial data...</span>
+<span class="co">#&gt; Warning in OGRSpatialRef(dsn, layer, morphFromESRI = morphFromESRI, dumpSRS =</span>
+<span class="co">#&gt; dumpSRS, : Discarded datum China_2000 in Proj4 definition: +proj=tmerc +lat_0=0</span>
+<span class="co">#&gt; +lon_0=117 +k=1 +x_0=39500000 +y_0=0 +ellps=GRS80 +units=m +no_defs</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; done</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; extracting spectral signatures of ground truth areas...</span>
+<span class="co">#&gt; done</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; saving overlay object...</span>
+<span class="co">#&gt; done</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; training model...note: only 2 unique complexity parameters in default grid. Truncating the grid to 2 .</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; done</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; saving model...</span>
+<span class="co">#&gt; done</span>
 
 <span class="co"># check model performance</span>
 <span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">gis</span>,<span class="st">"rForest.Rdata"</span><span class="op">)</span><span class="op">)</span>
 <span class="fu">caret</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/caret/man/confusionMatrix.html" class="external-link">confusionMatrix</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">model</span><span class="op">$</span><span class="va">finalModel</span><span class="op">$</span><span class="va">predicted</span>, 
                        reference <span class="op">=</span> <span class="va">model</span><span class="op">$</span><span class="va">trainingData</span><span class="op">$</span><span class="va">.outcome</span>, 
                        mode <span class="op">=</span> <span class="st">'prec_recall'</span><span class="op">)</span>
+<span class="co">#&gt; Confusion Matrix and Statistics</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;           Reference</span>
+<span class="co">#&gt; Prediction      1      2      3      4      5</span>
+<span class="co">#&gt;          1  26924     98    336     10     11</span>
+<span class="co">#&gt;          2    184   4398     52      0      0</span>
+<span class="co">#&gt;          3    413    135  57932    159   1456</span>
+<span class="co">#&gt;          4     13      7    141    580      5</span>
+<span class="co">#&gt;          5     54      8   3457     17 111736</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Overall Statistics</span>
+<span class="co">#&gt;                                           </span>
+<span class="co">#&gt;                Accuracy : 0.9685          </span>
+<span class="co">#&gt;                  95% CI : (0.9677, 0.9692)</span>
+<span class="co">#&gt;     No Information Rate : 0.5439          </span>
+<span class="co">#&gt;     P-Value [Acc &gt; NIR] : &lt; 2.2e-16       </span>
+<span class="co">#&gt;                                           </span>
+<span class="co">#&gt;                   Kappa : 0.947           </span>
+<span class="co">#&gt;                                           </span>
+<span class="co">#&gt;  Mcnemar's Test P-Value : &lt; 2.2e-16       </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Statistics by Class:</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;                      Class: 1 Class: 2 Class: 3 Class: 4 Class: 5</span>
+<span class="co">#&gt; Precision              0.9834  0.94907   0.9640 0.777480   0.9693</span>
+<span class="co">#&gt; Recall                 0.9759  0.94662   0.9356 0.757180   0.9870</span>
+<span class="co">#&gt; F1                     0.9796  0.94784   0.9496 0.767196   0.9781</span>
+<span class="co">#&gt; Prevalence             0.1326  0.02232   0.2975 0.003680   0.5439</span>
+<span class="co">#&gt; Detection Rate         0.1294  0.02113   0.2784 0.002787   0.5369</span>
+<span class="co">#&gt; Detection Prevalence   0.1316  0.02227   0.2887 0.003584   0.5539</span>
+<span class="co">#&gt; Balanced Accuracy      0.9867  0.97273   0.9604 0.878190   0.9749</span>
                        
 <span class="co"># classify image for roofs and streets</span>
 <span class="fu">kwb.ml</span><span class="fu">::</span><span class="fu"><a href="../reference/predictSurfClass.html">predictSurfClass</a></span><span class="op">(</span>rawdir <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">gis</span>,
                                     modelName <span class="op">=</span> <span class="st">'rForest.Rdata'</span>,
                                     image <span class="op">=</span> <span class="st">'input_image.img'</span>,
-                                    predName <span class="op">=</span> <span class="st">'classified_image.img'</span><span class="op">)</span></code></pre></div>
+                                    predName <span class="op">=</span> <span class="st">'classified_image.img'</span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loading model...</span>
+<span class="co">#&gt; done</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; making predictions...</span>
+<span class="co">#&gt; done</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; writing output...</span>
+<span class="co">#&gt; done</span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
