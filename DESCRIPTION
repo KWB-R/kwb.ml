@@ -31,7 +31,8 @@ Suggests:
     fs,
     knitr,
     kwb.nextcloud,
-    rmarkdown
+    rmarkdown,
+    rgdal
 Remotes:
     github::kwb-r/kwb.nextcloud,
     github::kwb-r/kwb.utils

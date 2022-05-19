@@ -17,7 +17,7 @@ options(repos = c(
   kwbr = 'https://kwb-r.r-universe.dev',
   CRAN = 'https://cloud.r-project.org'))
   
-# Download and install keys.lid in R
+# Download and install kwb.ml in R
 install.packages('kwb.ml')
 
 # Browse the kwb.ml manual pages
