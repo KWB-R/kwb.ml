@@ -56,7 +56,7 @@
 #' @importFrom kwb.utils multiSubstitute
 #' @importFrom parallel makePSOCKcluster stopCluster
 #' @importFrom raster brick extract shapefile
-#'
+#' @import randomForest
 buildClassMod <- function(rawdir,
                           image,
                           groundTruth,

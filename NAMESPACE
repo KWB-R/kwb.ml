@@ -3,6 +3,7 @@
 export("%>%")
 export(buildClassMod)
 export(predictSurfClass)
+import(randomForest)
 importFrom(caret,createFolds)
 importFrom(caret,train)
 importFrom(caret,trainControl)

@@ -24,7 +24,8 @@ Imports:
     doParallel,
     kwb.utils,
     magrittr,
-    raster
+    raster,
+    randomForest
 Suggests: 
     covr,
     dplyr,
