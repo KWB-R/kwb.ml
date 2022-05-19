@@ -1,6 +1,6 @@
 ---
 title: "Case Study: Satellite Image Classification"
-author: Michael Rustler, Roberto Tatis-Muvdi
+author: Roberto Tatis-Muvdi, Michael Rustler
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
