@@ -122,14 +122,18 @@ paths$groundtruth
 
 ### Input Data 
 
-```{r ml_inputdata, eval = eval_code}
+#### Satellite Image
+
+```{r ml_inputdata_satellite, eval = eval_code}
 ## Plot 'satellite image'
 
 satellite_image <- raster::stack(paths$satellite_image)  
 raster::plotRGB(satellite_image)
+```
 
-satellite_raster <- raster::raster(paths$satellite_image)
+#### Classification Dataset
 
+```{r ml_inputdata_classification, eval = eval_code}
 ### Training dataset
 groundtruth <- raster::shapefile(paths$groundtruth)
 
