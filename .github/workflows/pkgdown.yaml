@@ -22,6 +22,10 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@master
 
+      - name: Install spatial dependencies
+        run: |
+          brew install gdal
+
       - name: Query dependencies
         run: |
           install.packages('remotes')
