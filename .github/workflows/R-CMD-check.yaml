@@ -67,6 +67,13 @@ jobs:
           Rscript -e "remotes::install_github('r-hub/sysreqs')"
           sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
           sudo -s eval "$sysreqs"
+
+      - name: Install spatial dependencies
+        if: runner.os == 'macOS'
+        run: |
+          rm '/usr/local/bin/gfortran'
+          brew install gdal proj
+
       - name: Install dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
