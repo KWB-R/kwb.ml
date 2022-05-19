@@ -14,7 +14,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       NEXTCLOUD_URL: ${{ secrets.NEXTCLOUD_URL }}
       NEXTCLOUD_USER: ${{ secrets.NEXTCLOUD_USER }}
-      NEXTCLOUD_PW: ${{ secrets.NEXTCLOUD_PW }}
+      NEXTCLOUD_PASSWORD: ${{ secrets.NEXTCLOUD_PASSWORD }}
     steps:
       - uses: actions/checkout@v2
 

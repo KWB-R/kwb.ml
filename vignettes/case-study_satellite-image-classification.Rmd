@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 is_ghactions <- identical(Sys.getenv("CI"), "true")
 all_nextcloud_envs_set <- all(nchar(Sys.getenv(sprintf("NEXTCLOUD_%s", 
-                                                   c("URL", "USER", "PW"))) > 0))
+                                                   c("URL", "USER", "PASSWORD"))) > 0))
 eval_code <- is_ghactions && all_nextcloud_envs_set
 ```
 
